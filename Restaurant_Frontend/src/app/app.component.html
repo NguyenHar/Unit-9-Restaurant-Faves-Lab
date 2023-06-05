@@ -1,0 +1,18 @@
+<div *ngFor="let o of orders; let i = index">
+  <p>Restaurant: {{o.restaurant}}</p>
+  <p>Description: {{o.description}}</p>
+  <p>Rating: {{o.rating}}</p>
+  <p>Order again?: {{o.orderAgain}}</p>
+  <p>
+    <button (click)="deleteOrder(o.id)">Delete Order</button>
+  </p>
+
+  <br/>
+</div>
+
+<p>Add a new order</p>
+<p>Restaurant: <input type="name" [(ngModel)]="newOrder.restaurant"></p>
+<p>Descripton: <input type="text" [(ngModel)]="newOrder.description"></p>
+<p>Rating: <input type="number" min="1" max="5" [(ngModel)]="newOrder.rating"></p>
+<p>Order Again?: <input type="checkbox" [(ngModel)]="newOrder.orderAgain"></p>
+<button (click)="addOrder()">Add new order</button>
